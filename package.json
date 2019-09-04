@@ -1,0 +1,15 @@
+{
+  "name": "queue",
+  "version": "1.0.0",
+  "description": "Javascript queue data structure",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --verbose --coverage"
+  },
+  "keywords": [],
+  "author": "Jacob Knaack @jacobknaack",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^24.9.0"
+  }
+}
