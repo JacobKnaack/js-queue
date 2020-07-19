@@ -2,15 +2,15 @@
 
 /**
  * Creates a simple queue with properties similar to a linked list.
- * @param {any} data 
+ * @param {any} data
  */
 
-const Node = require('./Node.js');
+const Node = require('./lib/node.js');
 
 class Queue {
   constructor() {
     this.front = null;
-    this.rear = null;
+    this.back = null;
   }
 
   enqueue(data) {
@@ -26,18 +26,21 @@ class Queue {
       this.front = newNode;
     }
 
-    this.rear = newNode;
-    return this.rear;
+    this.back = newNode;
+    return this.back;
   }
 
   dequeue() {
     if (this.front) {
-      let current = this.front;
-      this.front = current.next;
-      if (!current.next) {
-        this.rear = this.front;
+      let remove = this.front;
+      console.log(remove);
+      if (remove.next) {
+        this.front = remove.next;
+      } else {
+        this.front = null;
+        this.back = null;
       }
-      return current;
+      return remove;
     } else {
       return 'Queue is empty';
     }
